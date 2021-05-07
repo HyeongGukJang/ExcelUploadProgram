@@ -110,13 +110,13 @@ namespace WinFormsApp8
                     if (tbl_exist == "1")
                     {
                         MessageBox.Show("디비에 업로드 중입니다. ");
-                        SqlCommand.CommandText = "update [uniLITE].[BPR200T] SET SAFE_STOCK_Q = 0";
+                        SqlCommand.CommandText = "update [DB이름].[TABLE이름] SET 해당칼럼 = 0";
                         SqlCommand.ExecuteNonQuery();
                     }
 
                     for(int i = 0; i < dataGridView1.RowCount; i++)
                     {
-                        SqlCommand.CommandText = "update [uniLITE].[BPR200T] SET SAFE_STOCK_Q = " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " WHERE ITEM_CODE = '" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "'";
+                        SqlCommand.CommandText = "update [DB이름].[TABLE이름] SET 해당칼럼 = " + dataGridView1.Rows[i].Cells[1].Value.ToString() + " WHERE 해당칼럼 = '" + dataGridView1.Rows[i].Cells[0].Value.ToString() + "'";
                         SqlCommand.ExecuteNonQuery();
                         MessageBox.Show("업로드가 완료되었습니다..");
                     }
